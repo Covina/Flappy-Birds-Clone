@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: a6cd4caac8abb4c4b8a2b8d3558b6406
-timeCreated: 1490713963
+timeCreated: 1490762278
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -280,7 +280,7 @@ TextureImporter:
         width: 8
         height: 8
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -293,7 +293,7 @@ TextureImporter:
         width: 4
         height: 9
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -444,9 +444,9 @@ TextureImporter:
       name: panel02
       rect:
         serializedVersion: 2
-        x: 23
+        x: 24
         y: 214
-        width: 719
+        width: 717
         height: 238
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
