@@ -11,11 +11,19 @@ public class BirdScript : MonoBehaviour {
 
 	[SerializeField] private Animator animator;
 
+	// Audio files
+	[SerializeField] private AudioSource audioSource;
+	[SerializeField] private AudioClip flapClick, pointsClip, diedClip;
+
+	// set bird movement speeds
 	private float forwardSpeed = 3.0f;
 	private float bounceSpeed = 4.0f;
 
+	// declare state monitors
 	private bool didFlap;
 	public bool isAlive;
+
+	private int score;
 
 
 	private Button flapButton;
@@ -59,8 +67,10 @@ public class BirdScript : MonoBehaviour {
 				didFlap = false;
 
 				myRigidBody2D.velocity = new Vector2 (0, bounceSpeed);
-
 				animator.SetTrigger ("Flap");
+
+				// play flapping sound
+				audioSource.PlayOneShot(flapClick);
 
 			}
 
@@ -109,8 +119,40 @@ public class BirdScript : MonoBehaviour {
 		// update the Camera static offset value
 		//CameraScript.offsetX = (Camera.main.transform.position.x - transform.position.x) - 1f;
 
+	}
 
+
+	private void OnCollisionEnter2D (Collision2D collision)
+	{
+
+		// did it hit the ground or a pipe?
+		if (collision.gameObject.tag == "Ground" || collision.gameObject.tag == "Pipe") {
+
+			// sanity that it's still alive
+			if (isAlive) {
+
+				isAlive = false;
+				animator.SetTrigger("BirdDied");
+				audioSource.PlayOneShot(diedClip);
+
+
+			}
+
+		}
 
 	}
+
+
+	private void OnTriggerEnter2D (Collider2D collider)
+	{
+		if (collider.tag == "Pipeholder") {
+
+			score++;
+			audioSource.PlayOneShot(pointsClip);
+
+		}
+
+	}
+
 
 }
