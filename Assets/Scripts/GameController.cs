@@ -10,7 +10,7 @@ public class GameController : MonoBehaviour {
 
 	[SerializeField] Text scoreText, endScore, bestScore, gameOverText;
 
-	[SerializeField] Button restartGameButton;
+	[SerializeField] Button restartGameButton, instructionsButton;
 
 	[SerializeField] GameObject pausePanel;
 

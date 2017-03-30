@@ -23,7 +23,7 @@ public class BirdScript : MonoBehaviour {
 	private bool didFlap;
 	public bool isAlive;
 
-	private int score;
+	public int score = 0;
 
 
 	private Button flapButton;
@@ -135,6 +135,9 @@ public class BirdScript : MonoBehaviour {
 				animator.SetTrigger("BirdDied");
 				audioSource.PlayOneShot(diedClip);
 
+				// Game Over time
+				GameplayController.instance.PlayerDiedShowScore(score);
+
 
 			}
 
@@ -148,6 +151,7 @@ public class BirdScript : MonoBehaviour {
 		if (collider.tag == "Pipeholder") {
 
 			score++;
+			GameplayController.instance.SetScore(score);
 			audioSource.PlayOneShot(pointsClip);
 
 		}
