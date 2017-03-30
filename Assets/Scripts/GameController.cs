@@ -1,10 +1,21 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameController : MonoBehaviour {
 
 	public static GameController instance;
+
+
+	[SerializeField] Text scoreText, endScore, bestScore, gameOverText;
+
+	[SerializeField] Button restartGameButton;
+
+	[SerializeField] GameObject pausePanel;
+
+	[SerializeField] Sprite[] birds;
+	[SerializeField] Sprite[] medals;
 
 	// store the high score lookup key for playerprefs
 	private const string HIGH_SCORE = "High Score";
