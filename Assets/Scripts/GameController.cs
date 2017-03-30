@@ -16,6 +16,8 @@ public class GameController : MonoBehaviour {
 
 	void Awake ()
 	{
+		MakeSingleton();
+
 		// init the player prefs
 		IsThisPlayersFirstTime();
 
@@ -50,15 +52,15 @@ public class GameController : MonoBehaviour {
 	{
 
 		// have we init values before?
-		if( !PlayerPrefs.HasKey("IsThisPlayersFirstTime") ) {
+		if( !PlayerPrefs.HasKey("IsPlayersFirstTime") ) {
 
 			// If not, init
 			PlayerPrefs.SetInt(HIGH_SCORE, 0);
 			PlayerPrefs.SetInt(SELECTED_BIRD, 0);
 			PlayerPrefs.SetInt(GREEN_BIRD, 0);
-			PlayerPrefs.SetInt(BLUE_BIRD, 0);
+			PlayerPrefs.SetInt(BLUE_BIRD, 1);
 			PlayerPrefs.SetInt(RED_BIRD, 0);
-			PlayerPrefs.SetInt("IsThisPlayersFirstTime", 0);
+			PlayerPrefs.SetInt("IsPlayersFirstTime", 0);
 
 
 		}
@@ -67,7 +69,6 @@ public class GameController : MonoBehaviour {
 
 
 	// SJ - Adding Getters and Setters, foregoing the set/get function approach in the lesson.
-
 	public int HighScore 
 	{
 		get { return PlayerPrefs.GetInt(HIGH_SCORE); }
