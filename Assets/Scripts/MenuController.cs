@@ -8,7 +8,7 @@ public class MenuController : MonoBehaviour {
 	public static MenuController instance;
 	[SerializeField] GameObject[] birds;
 
-	private bool isGreenBirdUnlocked, isRedBirdUnlocked;
+//	private bool isGreenBirdUnlocked, isRedBirdUnlocked;
 
 
 
@@ -23,13 +23,13 @@ public class MenuController : MonoBehaviour {
 	void Start () {
 
 		// Activate the stored bird
-		Debug.Log("Selected Bird: " + GameController.instance.SelectedBird);
+		//Debug.Log("Selected Bird: " + GameController.instance.SelectedBird);
 		birds[GameController.instance.SelectedBird].SetActive(true);
 
 
 
 		// check what is unlocked
-		CheckIfBirdsAreUnlocked();
+//		CheckIfBirdsAreUnlocked();
 
 
 
@@ -47,18 +47,18 @@ public class MenuController : MonoBehaviour {
 		}
 	}
 
-
-	// Set bools for tracking whether birds are unlocked
-	void CheckIfBirdsAreUnlocked ()
-	{
-		if (GameController.instance.IsRedBirdUnlocked == 1) {
-			isRedBirdUnlocked = true;
-		}
-
-		if (GameController.instance.IsGreenBirdUnlocked == 1) {
-			isGreenBirdUnlocked = true;
-		}
-	}
+//
+//	// Set bools for tracking whether birds are unlocked
+//	void CheckIfBirdsAreUnlocked ()
+//	{
+//		if (GameController.instance.IsRedBirdUnlocked == 1) {
+//			isRedBirdUnlocked = true;
+//		}
+//
+//		if (GameController.instance.IsGreenBirdUnlocked == 1) {
+//			isGreenBirdUnlocked = true;
+//		}
+//	}
 
 
 	public void ChangeBird ()
@@ -105,7 +105,7 @@ public class MenuController : MonoBehaviour {
 	}
 
 
-
+	// Create function to allow Start Game button to work from main menu.
 	public void StartGame ()
 	{
 		SceneManager.LoadScene("Gameplay");

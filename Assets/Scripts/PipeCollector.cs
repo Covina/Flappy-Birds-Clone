@@ -51,7 +51,7 @@ public class PipeCollector : MonoBehaviour {
 	void OnTriggerEnter2D(Collider2D collider) 
 	{
 
-		Debug.Log(name + " collided with " + collider);
+		//Debug.Log(name + " collided with " + collider);
 
 		if (collider.tag == "Pipeholder") {
 
