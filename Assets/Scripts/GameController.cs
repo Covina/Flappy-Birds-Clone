@@ -8,15 +8,6 @@ public class GameController : MonoBehaviour {
 	public static GameController instance;
 
 
-	[SerializeField] Text scoreText, endScore, bestScore, gameOverText;
-
-	[SerializeField] Button restartGameButton, instructionsButton;
-
-	[SerializeField] GameObject pausePanel;
-
-	[SerializeField] Sprite[] birds;
-	[SerializeField] Sprite[] medals;
-
 	// store the high score lookup key for playerprefs
 	private const string HIGH_SCORE = "High Score";
 	private const string SELECTED_BIRD = "Selected Bird";
